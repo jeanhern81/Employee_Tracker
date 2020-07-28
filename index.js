@@ -22,7 +22,20 @@ StaticRange();
 //function which prompts the user for what action they should take
 function start () {
     inquirer
-        .prompt
+        .prompt({
+            name: "task",
+            type: "list",
+            message: "What would you like to do?",
+            choices: [
+                "View Employee",
+                "View Employee by Department",
+                "Add an Employee",
+                "Remove an Employee",
+                "Update an Employee's Role",
+                "Add a New Role",
+                "Finish",
+            ],
+        });
 }
 
 
