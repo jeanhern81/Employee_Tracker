@@ -23,20 +23,65 @@ StaticRange();
 function start () {
     inquirer
         .prompt({
-            name: "task",
+            name: "action",
             type: "list",
             message: "What would you like to do?",
             choices: [
+                "Add Employee",
+                "Add Department",
+                "Add Role",
                 "View Employee",
-                "View Employee by Department",
-                "Add an Employee",
-                "Remove an Employee",
-                "Update an Employee's Role",
-                "Add a New Role",
-                "Finish",
+                "View Departments",
+                "View Roles",
+                "Update Employee Role",
+                "Exit"
             ],
         });
+
+//switch statement for the above choices
+.then(function(answer) {
+    switch (answer.action) {
+        case "Add Employee":
+        addEmployee();
+        break;
+
+        case "Add Department":
+        addDepartment();
+        break;
+
+        case "Add Role":
+        addRole();
+        break;
+
+        case "Add Role":
+        addRole();
+        break;
+
+        case "View Employee":
+        addEmployee();
+        break;
+
+        case "View Department":
+        addDepartment();
+        break;
+
+        case "View Roles":
+        addRoles();
+        break;
+
+        case "Update Employee Role":
+        addUpdateEmployeeRole();
+        break;
+
+        case "Exit":
+        connection.exit();
+        break;
+    }
+});
+
 }
+
+
 
 
 
