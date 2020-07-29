@@ -16,9 +16,8 @@ database: "employee_DB"
 
 //connect to the mysql server and sql database
 connection.connect(function (err) {
-    if (err) {
-        throw err
-    }
+    if (err) throw err
+    
 //run the start function after the connection is made to prompt the server
 
 firstPromt();
@@ -45,6 +44,8 @@ function firstPromt () {
 
 //switch statement for the above choices
 .then(function(answer) {
+console.log("You entered: " + answer.action);
+
     switch (answer.action) {
         case "Add Employee":
         addEmployee();
@@ -88,7 +89,7 @@ function firstPromt () {
 
 function addEmployee() {
 //role table
-    connection.query("SELECT * FROM role", function(err, result){
+    connection.query("SELECT * FROM role", function (err, result){
         inquirer
             .prompt([
                 {
@@ -112,7 +113,7 @@ function addEmployee() {
                         "Accountant",
                         "Salesperson"],
                 //an array that returns employee job tiles. 
-                    //choices: result.map(role => role.title)
+                //choices: result.map(role => role.title)
                 },
             ])
             .then(({ firstName, lastName, employeeRole }) => {
