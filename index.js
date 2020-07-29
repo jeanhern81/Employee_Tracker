@@ -1,6 +1,6 @@
 var mysql = require("mysql");
 var inquirer = require("inquirer");
-require("console.table");
+var cTable = require("console.table");
 
 //create the connection information for the sql databse
 var connection = mysql.createConnection({
@@ -16,8 +16,11 @@ database: "employee_DB"
 
 //connect to the mysql server and sql database
 connection.connect(function (err) {
-    if (err) throw err;
+    if (err) {
+        throw err
+    }
 //run the start function after the connection is made to prompt the server
+
 firstPromt();
 });
 
@@ -85,7 +88,7 @@ function firstPromt () {
 
 function addEmployee() {
 //role table
-    connection.query("Select * FROM role", function(err, res){
+    connection.query("SELECT * FROM role", function(err, result){
         inquirer
             .prompt([
                 {
@@ -100,10 +103,16 @@ function addEmployee() {
                 },
                 {
                     name: "employeeRole",
-                    type: "list",
+                    type: "checkbox",
                     message: "What is the employee's role?",
+                    choices: [
+                        "Senior Engineer",
+                        "Software Engineer",
+                        "Human Resource Generalist",
+                        "Accountant",
+                        "Salesperson"],
                 //an array that returns employee job tiles. 
-                    choices: result.map(role => role.title)
+                    //choices: result.map(role => role.title)
                 },
             ])
             .then(({ firstName, lastName, employeeRole }) => {

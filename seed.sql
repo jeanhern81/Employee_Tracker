@@ -22,9 +22,9 @@ VALUES
 
 INSERT INTO employee (first_name, last_name, role_id, manager_id)
 VALUES      
-        ("", "",  , null),
-        ("", "",  , null),
-        ("", "",  , null),
-        ("", "",  , null),
-        ("", "",  , null),
-        ("", "",  , null);
+        ("Dennis", "Reynolds", 3, null),
+        ("Deandra", "Reynolds", 2, null),
+        ("Charlie", "Kelly", 5, null),
+        ("Ronald", "McDonald", 1, null),
+        ("Frank", "Reynolds", 4, null),
+        ("Bill", "Ponderosa", 6, null);
