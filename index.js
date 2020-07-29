@@ -70,21 +70,21 @@ function askQuestions() {
         }
     })
 }
-
+//function to view employee directory
 function viewEmployees() {
     connection.query("SELECT * FROM employee", function (err, data) {
         console.table(data);
         askQuestions();
     })
 }
-
+//function to view departments
 function viewDepartments() {
     connection.query("SELECT * FROM department", function (err, data) {
         console.table(data);
         askQuestions();
     })
 }
-
+//function to add employee data to the chart/table
 function addEmployee() {
     inquirer.prompt([{
             type: "input",
@@ -106,6 +106,7 @@ function addEmployee() {
             name: "managerId",
             message: "What is the employees manager's ID?"
         }*/
+        //this adds the data into the table on mysql
     ]).then(function(res) {
         connection.query('INSERT INTO employee (first_name, last_name, role_id) VALUES (?, ?, ?)', [res.firstName, res.lastName, res.roleId], function(err, data) {
             if (err) throw err;
@@ -114,13 +115,15 @@ function addEmployee() {
         })
     })
 }
-
+//function to add department data to the chart/table
 function addDepartment() {
     inquirer.prompt([{
         type: "input",
         name: "department",
         message: "What is the department that you want to add?"
-    }, ]).then(function(res) {
+    }, 
+    //this adds the data into the table on mysql
+]).then(function(res) {
         connection.query('INSERT INTO department (name) VALUES (?)', [res.department], function(err, data) {
             if (err) throw err;
             console.table("Successfully Inserted");
@@ -128,7 +131,7 @@ function addDepartment() {
         })
     })
 }
-
+//function to add an employee role data to the chart/table
 function addRole() {
     inquirer.prompt([{
             message: "enter title:",
@@ -145,6 +148,7 @@ function addRole() {
             type: "number",
             name: "department_id"
         }
+        //this adds the data into the table on mysql
     ]).then(function (response) {
         connection.query("INSERT INTO roles (title, salary, department_id) values (?, ?, ?)", [response.title, response.salary, response.department_id], function (err, data) {
             console.table(data);
@@ -153,7 +157,7 @@ function addRole() {
     })
 
 }
-
+//function to update employee's role 
 function updateEmployeeRole() {
     inquirer.prompt([
         {
@@ -165,6 +169,7 @@ function updateEmployeeRole() {
             type: "number",
             name: "role_id"
         }
+        //this adds the data into the table on mysql
     ]).then(function (response) {
         connection.query("UPDATE employee SET role_id = ? WHERE first_name = ?", [response.role_id, response.name], function (err, data) {
             console.table(data);
