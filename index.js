@@ -48,19 +48,19 @@ function askQuestions() {
                 viewDepartments()
                 break;
 
-            case "add employee":
+            case "Add Employee":
                 addEmployee()
                 break;
 
-            case "add department":
+            case "Add Department":
                 addDepartment()
                 break;
 
-            case "add role":
+            case "Add Role":
                 addRole()
                 break;
 
-            case "update employee role":
+            case "Update Employee Role":
                 updateEmployeeRole();
                 break;
 
@@ -130,16 +130,17 @@ function addDepartment() {
 }
 
 function addRole() {
-    inquirer.prompt([
-        {
+    inquirer.prompt([{
             message: "enter title:",
             type: "input",
             name: "title"
-        }, {
+        }, 
+        {
             message: "enter salary:",
             type: "number",
             name: "salary"
-        }, {
+        }, 
+        {
             message: "enter department ID:",
             type: "number",
             name: "department_id"
