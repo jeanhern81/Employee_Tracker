@@ -22,7 +22,7 @@ VALUES ("Marketing Coordinator", 60000, 3);
 INSERT INTO role (title, salary, department_id)
 VALUES ("Accoutant", 90000, 4);
 INSERT INTO role (title, salary, department_id)
-VALUES ("Salesperson", 100000, 5);
+VALUES ("Sales Rep", 100000, 5);
 
 
 

@@ -150,7 +150,7 @@ function addRole() {
         }
         //this adds the data into the table on mysql
     ]).then(function (response) {
-        connection.query("INSERT INTO roles (title, salary, department_id) values (?, ?, ?)", [response.title, response.salary, response.department_id], function (err, data) {
+        connection.query("INSERT INTO role (title, salary, department_id) VALUES (?, ?, ?)", [response.title, response.salary, response.department_id], function (err, data) {
             console.table(data);
         })
         askQuestions();
