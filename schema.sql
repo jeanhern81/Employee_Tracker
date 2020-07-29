@@ -1,3 +1,5 @@
+
+
 DROP DATABASE IF EXISTS employee_DB;
 CREATE DATABASE employee_DB;
 
@@ -29,3 +31,4 @@ CREATE TABLE employee (
 SELECT * FROM department;
 SELECT * FROM role;
 SELECT * FROM employee;
+
