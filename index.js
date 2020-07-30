@@ -149,11 +149,13 @@ function addRole() {
             name: "department_id"
         }
         //this adds the data into the table on mysql
-    ]).then(function (response) {
-        connection.query("INSERT INTO role (title, salary, department_id) VALUES (?, ?, ?)", [response.title, response.salary, response.department_id], function (err, data) {
+    ]).then(function (res) {
+        connection.query("INSERT INTO role (title, salary, department_id) VALUES (?, ?, ?)", [res.title, res.salary, res.department_id], function (err, data) {
+            if (err) throw err;
             console.table(data);
+            askQuestions();
         })
-        askQuestions();
+        
     })
 
 }
