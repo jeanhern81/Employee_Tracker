@@ -40,11 +40,11 @@ function askQuestions() {
         console.log(answers.choice);
     //switch statement for the above choices
         switch (answers.choice) {
-            case "view all employees":
+            case "View All Employees":
                 viewEmployees()
                 break;
 
-            case "view all departments":
+            case "View All Departments":
                 viewDepartments()
                 break;
 
