@@ -19,7 +19,7 @@ This command-line application will help manage departments, roles, and employees
 
 ## Demo
 
-![video](https://drive.google.com/file/d/1Gggyj-PevuOI0ktOT1xW4n2y56CaemvA/view) 
+![demo](./Assets/Emt.gif) 
 
 ![screenshot](./Assets/screenshot01.JPG)
 
