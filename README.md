@@ -19,7 +19,7 @@ This command-line application will help manage departments, roles, and employees
 
 ## Demo
 
-![gif](https://drive.google.com/file/d/1Gggyj-PevuOI0ktOT1xW4n2y56CaemvA/view)
+![video](https://drive.google.com/file/d/1wzzG7z2Cj1S1yDXEcnFf1yA64oXjBrlX/view) 
 
 ![screenshot](./Assets/screenshot01.JPG)
 
@@ -45,7 +45,7 @@ Jeanette Hernandez
 
 ## Installation
 
-1. Download zip file: git@github.com:jeanhern81/Employee_Tracker.git
+1. Download zip file: ` git@github.com:jeanhern81/Employee_Tracker.git `
 2. Unzip into  your local directory
 3. Install: 
     * npm install inquirer
